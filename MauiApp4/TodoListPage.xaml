@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.ToDoListPage"
+             Title="To-Do List">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="add.png" Text="Add" Clicked="OnAddClicked" />
+        <ToolbarItem IconImageSource="save.png" Text="Save" Clicked="OnSaveClicked" />
+    </ContentPage.ToolbarItems>
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <CollectionView x:Name="ToDoCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Entry Text="{Binding Task}" Grid.Column="0" />
+                        <!-- Delete Icon Button -->
+                        <ImageButton Source="delete.png" Grid.Column="1" Clicked="OnDeleteClicked" 
+                                     BackgroundColor="Transparent" WidthRequest="30" HeightRequest="30" />
+
+                        <!-- Edit Icon Button -->
+                        <ImageButton Source="update.png" Grid.Column="2" Clicked="OnEditClicked" 
+                                     BackgroundColor="Transparent" WidthRequest="30" HeightRequest="30" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

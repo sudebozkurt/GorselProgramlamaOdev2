@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image Source="photo.jpg" HeightRequest="300" WidthRequest="300"/>
+            <Label Text="Sude Bozkurt" HorizontalOptions="Center" FontSize="Medium"/>
+            <Label Text="Bartın Üniversitesi Bilgisayar Mühendisliği" HorizontalOptions="Center"/>
+            <Label Text="ÖDEV-2" FontSize="Medium" HorizontalOptions="Center" />
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

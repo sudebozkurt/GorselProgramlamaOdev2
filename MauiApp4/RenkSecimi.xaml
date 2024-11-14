@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.RenkSecimi"
+             Title="Renk Seçici">
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Renk Seçici"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <Label Text="Kırmızı"
+               HorizontalOptions="Start" />
+        <Slider x:Name="RedSlider" Minimum="0" Maximum="255" ValueChanged="OnSliderValueChanged" />
+        <Label x:Name="RedValueLabel" HorizontalOptions="Start" />
+
+        <Label Text="Yeşil"
+               HorizontalOptions="Start" />
+        <Slider x:Name="GreenSlider" Minimum="0" Maximum="255" ValueChanged="OnSliderValueChanged" />
+        <Label x:Name="GreenValueLabel" HorizontalOptions="Start" />
+
+        <Label Text="Mavi"
+               HorizontalOptions="Start" />
+        <Slider x:Name="BlueSlider" Minimum="0" Maximum="255" ValueChanged="OnSliderValueChanged" />
+        <Label x:Name="BlueValueLabel" HorizontalOptions="Start" />
+
+        <Label Text="HEX Kodu"
+               HorizontalOptions="Center" />
+        <Entry x:Name="HexCodeEntry" IsReadOnly="True" HorizontalOptions="Center" />
+
+        <BoxView x:Name="ColorPreview" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" />
+
+        <Button Text="Rastgele Renk" Clicked="OnRandomColorButtonClicked" HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

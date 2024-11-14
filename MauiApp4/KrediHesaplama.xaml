@@ -1,0 +1,57 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.KrediHesaplama"
+             Title="Kredi Hesaplama">
+    <StackLayout Padding="20">
+        <VerticalStackLayout Spacing="15">
+
+            <!-- Options -->
+            <Picker x:Name="OptionsPicker"
+                Title="Kredi Türünü Seçiniz"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    WidthRequest="300"
+                    HeightRequest="60"
+                    SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>İhtiyaç Kredisi</x:String>
+                    <x:String>Konut Kredisi</x:String>
+                    <x:String>Taşıt Kredisi</x:String>
+                    <x:String>Ticari Kredi</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- Form -->
+            <Grid Padding="10" ColumnDefinitions="Auto, 200" HorizontalOptions="Center" VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Kredi Tutarı -->
+                <Label Grid.Row="0" Grid.Column="0" Text="Kredi Tutarı (TL)" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="End" Margin="10" />
+                <Entry x:Name="KrediTutari" Grid.Row="0" Grid.Column="1" Placeholder="Tutar" Keyboard="Numeric" HeightRequest="40" />
+
+                <!-- Faiz Oranı -->
+                <Label Grid.Row="1" Grid.Column="0" Text="Faiz Oranı (%)" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="End" Margin="10" />
+                <Entry x:Name="FaizOrani" Grid.Row="1" Grid.Column="1" Placeholder="Oran" Keyboard="Numeric" HeightRequest="40" />
+
+                <!-- Vade -->
+                <Label Grid.Row="2" Grid.Column="0" Text="Vade (Ay)" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="End" Margin="10" />
+                <Entry x:Name="VadeEntry" Grid.Row="2" Grid.Column="1" Placeholder="Ay" Keyboard="Numeric" HeightRequest="40" TextChanged="OnVadeEntryTextChanged" />
+                <Slider x:Name="VadeSlider" Grid.Row="3" Grid.ColumnSpan="2" Minimum="1" Maximum="120" ValueChanged="OnVadeSliderValueChanged" />
+
+                <!-- Hesapla -->
+                <Button Text="Hesapla" Grid.Row="4" Grid.ColumnSpan="2" HeightRequest="50" WidthRequest="200" VerticalOptions="Center" HorizontalOptions="Center" Clicked="OnHesaplaButtonClicked" Margin="10"/>
+            </Grid>
+
+            <!-- Sonuçlar -->
+            <Label x:Name="TaksitLabel" Text="Aylık Taksit: 0 TL" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Label x:Name="ToplamOdemeLabel" Text="Toplam Ödeme: 0 TL" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Label x:Name="ToplamFaizLabel" Text="Toplam Faiz: 0 TL" FontAttributes="Bold" HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </StackLayout>
+</ContentPage>

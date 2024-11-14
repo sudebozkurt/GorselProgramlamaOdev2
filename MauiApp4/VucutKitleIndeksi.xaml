@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.VucutKitleIndeksi"
+             Title="Vücut Kitle İndeksi">
+    <VerticalStackLayout>
+        <Label 
+            Text="VKİ=kg/(boy*boy)"
+            TextColor="Purple"
+            FontSize="Large"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"/>
+        
+        <Grid Padding="10" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Kilo (kg)" Grid.Row="0" Grid.Column="0"/>
+            <Entry x:Name="KgEntry" Placeholder="kg" Keyboard="Numeric" Grid.Row="0" Grid.Column="1" TextChanged="OnTextChanged"/>
+            <Slider x:Name="KgSlider" Maximum="250" WidthRequest="200" Grid.Row="0" Grid.Column="2" ValueChanged="OnSliderValueChanged"/>
+
+            <Label Text="Boy (cm)" Grid.Row="1" Grid.Column="0"/>
+            <Entry x:Name="BoyEntry" Placeholder="cm" Keyboard="Numeric" Grid.Row="1" Grid.Column="1" TextChanged="OnTextChanged"/>
+            <Slider x:Name="boySlider" Maximum="250" WidthRequest="200" Grid.Row="1" Grid.Column="2" ValueChanged="OnSliderValueChanged"/>
+
+            <Label x:Name="SonucLabel" Text="VKİ Sonucu" HorizontalOptions="Center" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"/>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
